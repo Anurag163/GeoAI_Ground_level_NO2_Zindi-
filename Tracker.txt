@@ -1,0 +1,62 @@
+
+We can see 79% of the precipitation as 0. Though  Lombardy and Veneto regions generally has  Mediterranean climate
+it is possible that precipitation can be zero in summer months. We have date column and this can be used to crosscheck.
+Summer months generally starts from June 1st and ends on August 31st. We can do time series analysis for this
+
+We can see 9% zeros for CloudFraction. Need to check which other feature is collinear with it.
+
+--------------
+
+41% of NO2_trop is null. We can solve 25% of it as NO2_strat+NO2_trop=NO2_total
+
+
+--------------------------
+
+
+GT_NO2 vs LAT:- Highest concentrations appear around 45.4-45.6 degrees latitude.Suggests geographical hotspots of NO2 pollution.
+
+GT_NO2 vs LON:- Highest concentrations appear around 9.0-9.4 degrees longitude. suggests geographical hotspots of NO2 pollution.
+
+We will create heat maps or contour plots using LAT and LON data to visualize NO2 hotspots.
+Crosscheck using  spatial clustering algorithms to identify areas of high NO2 concentration.
+      
+GT_NO2 vs Precipitation:- Variability is high .We can see GT_NO2 decreasing with increasing precipitation.
+
+GT_NO2 vs LST:- There's a clear diurnal pattern in GT_NO2 concentrations against LST as 
+      LST directly represents time of day.Will investigate this with dates.
+
+GT_NO2 vs AAI: This is also showing same pattern as GT_NO2 vs LST: They may be correlated with each other.
+
+GT_NO2 vs NO2_strat:-GT_NO2 is decreasing with increasigng NO2_strat. The variability also decreases.
+
+GT_NO2 vs NO2_total:- We can see a possitive correlation between GT_NO2 and NO2_total.The density of points decreases as both variables increase.
+
+GT_NO2 vs NO2_Trop:- We can see a possitive correlation between GT_NO2 and NO2_Trop
+
+GT_NO2 vs CloudFraction:- As cloud fraction increases, the maximum NO2 concentrations tend to decrease.
+      The variability in NO2 seems to decrease as cloud fraction increases.
+
+GT_NO2 vs TropopausePressure:- The relationship isn't linear.We will see if we can convert it into catgorical
+    as I can see groups in the plot.
+
+    -------------------------------
+    CORRELATION
+
+         Variable1  Variable2  Correlation
+85   NO2_total   NO2_trop     0.986797
+39         LST  NO2_strat     0.823390
+118     GT_NO2   NO2_trop     0.726991
+117     GT_NO2  NO2_total     0.596019
+
+
+     Variable1           Variable2  Correlation
+42         LST  TropopausePressure    -0.349435
+73   NO2_strat           NO2_total    -0.436923
+40         LST           NO2_total    -0.443075
+113     GT_NO2                 LST    -0.519646
+41         LST            NO2_trop    -0.531214
+116     GT_NO2           NO2_strat    -0.558997
+74   NO2_strat            NO2_trop    -0.563020
+
+#LST  and NO2_strat are showing strong +ve correlative of 0.823390. Null values in LST: 46 % and NO2_strat: 15%. We will see if we can use this col to fill up LST maybe??
+#NO2_total  and   NO2_trop are showing strong +ve correlation of 0.986797. Null values in NO2_total: 15% and NO2_trop: 41%.We will see if we can use this col to fill up  NO2_trop.
