@@ -65,8 +65,10 @@ GT_NO2 vs TropopausePressure:- The relationship isn't linear.We will see if we c
 #We did the following transformations till  now
 1) Filled 25% null in NO2_trop doing NO2_TOTAL minus NO2_STRAT
 2) Did log transform in LST, NO2_STRAT, GT_NO2. As NO2_STRAT had very small values we did ['NO2_strat'] * 1e6 then did log for this col. 
- Null values in LST: 46 % and NO2_strat: 15%. So we will but around 30% of missing values in LST using linear regssion on these log transformed cols.
+ Null values in LST: 46 % and NO2_strat: 15%. So we will fill around 30% of missing values in LST using linear regssion on these log transformed cols.
 '''
 3) Did harvesine distance and k means for latitude and longitude to convert into clusters.Created cluster-7
+4)Converted clusters created in 3) to dummy encoding.
+
 
 
