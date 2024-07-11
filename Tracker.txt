@@ -72,3 +72,25 @@ GT_NO2 vs TropopausePressure:- The relationship isn't linear.We will see if we c
 
 
 
+#Lags
+1)AAI- Lag 3
+2) LST-Lag 1
+3)Precipitaion-No lag
+4)CloudFraction-No lag
+5)NO2_strat-Lag 1
+6)NO2_total-lag 1
+7)NO2_trop-lag 1
+8)TropopausePressure-lag 2
+
+
+Index(['LAT', 'LON', 'Precipitation', 'LST', 'AAI', 'CloudFraction',
+       'NO2_strat', 'NO2_total', 'NO2_trop', 'TropopausePressure', 'Date',
+       'PK', 'Rolling_Mean_Precipitation', 'Rolling_Stddev_Precipitation',
+       'Rolling_Mean_LST', 'Rolling_Stddev_LST', 'Rolling_Mean_AAI',
+       'Rolling_Stddev_AAI', 'Rolling_Mean_CloudFraction',
+       'Rolling_Stddev_CloudFraction', 'Rolling_Mean_NO2_strat',
+       'Rolling_Stddev_NO2_strat', 'Rolling_Mean_NO2_total',
+       'Rolling_Stddev_NO2_total', 'Rolling_Mean_NO2_trop',
+       'Rolling_Stddev_NO2_trop', 'Rolling_Mean_TropopausePressure',
+       'Rolling_Stddev_TropopausePressure'],
+      dtype='object')
