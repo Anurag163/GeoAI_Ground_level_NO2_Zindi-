@@ -6,3 +6,5 @@ The data is:
 **2)** Remote sensing data of NO2 from Sentinel-5P TROPOMI, precipitation from CHIRPS and land surface temperature from NOAA datasets, all from Google Earth Engine (GEE).
 
 [Zindi_link_for_challenge](https://zindi.africa/competitions/geoai-ground-level-no2-estimation-challenge/data)
+
+#Ended at 90/112
